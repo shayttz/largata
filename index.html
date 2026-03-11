@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Namorada Incrível ❤️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #fff0f3; /* Rosa bem claro e suave */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container Principal */
+        .main-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Animação de Entrada */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Título e Carta */
+        h1 {
+            color: #d63384; /* Rosa mais escuro para o título */
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+
+        .letter-content {
+            font-size: 1.1em;
+            line-height: 1.7;
+            text-align: left;
+            margin-bottom: 40px;
+            color: #555;
+            padding: 0 20px;
+        }
+
+        /* Galeria de Fotos */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .photo-gallery li {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-gallery li:hover {
+            transform: scale(1.03); /* Leve efeito de zoom no hover */
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Coração Animado no Final */
+        .heart-icon {
+            color: #d63384;
+            font-size: 3em;
+            animation: pulse 1.5s infinite;
+            margin-top: 30px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <h1>Para Você, Meu Amor ❤️</h1>
+
+    <div class="letter-content">
+        <p>My dear,</p>
+        <p>Estou escrevendo esta carta para você como uma surpresa especial. Ainda estou organizando as palavras para expressar tudo o que sinto, mas queria que você já visse o começo desta página que criei só para nós.</p>
+        <p>Preparei um espaço para colocarmos as nossas fotos favoritas, para que possamos sempre lembrar dos momentos incríveis que passamos juntos. Cada foto aqui é um pedacinho da nossa história.</p>
+        <p>Em breve, esta carta estará completa, cheia de carinho e de tudo o que você representa para mim. Por enquanto, aproveite as fotos e saiba que eu te amo muito! ❤️</p>
+        <p>Com todo o meu amor,</p>
+        <p>Guilherme</p>
+    </div>
+
+    <ul class="photo-gallery">
+        <li><img src="https://via.placeholder.com/200" alt="Foto Nossa 1"></li>
+        <li><img src="https://via.placeholder.com/200" alt="Foto Nossa 2"></li>
+        <li><img src="https://via.placeholder.com/200" alt="Foto Nossa 3"></li>
+        <li><img src="https://via.placeholder.com/200" alt="Foto Nossa 4"></li>
+    </div>
+
+    <i class="fas fa-heart heart-icon"></i>
+</div>
+
+</body>
+</html>
