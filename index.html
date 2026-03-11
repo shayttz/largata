@@ -6,11 +6,16 @@
     <title>Para Minha Namorada Incrível ❤️</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Estilos Globais */
+        /* Mantenha seus estilos anteriores e ADICIONE estes: */
+        
+        html {
+            scroll-behavior: smooth; /* Faz a rolagem ser suave */
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background-color: #fff0f3; /* Rosa suave */
+            background-color: #fff0f3;
             color: #444;
             display: flex;
             flex-direction: column;
@@ -19,7 +24,6 @@
             padding: 40px 20px;
         }
 
-        /* Container Principal */
         .main-container {
             max-width: 900px;
             width: 100%;
@@ -28,41 +32,12 @@
             box-shadow: 0 15px 35px rgba(214, 51, 132, 0.1);
             border-radius: 25px;
             text-align: center;
-            animation: fadeIn 1.2s ease-out;
-            box-sizing: border-box;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Título e Carta */
-        h1 {
-            color: #d63384;
-            font-size: 3em;
-            margin-bottom: 30px;
-            font-family: 'Georgia', serif;
-        }
-
-        .letter-content {
-            font-size: 1.15em;
-            line-height: 1.8;
-            text-align: left;
-            margin-bottom: 50px;
-            color: #555;
-            padding: 0 10px;
-            border-left: 3px solid #ffc1e3;
-            padding-left: 25px;
-        }
-
-        /* Galeria de Fotos em Cards */
         .photo-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            margin-bottom: 40px;
-            width: 100%;
             list-style: none;
             padding: 0;
         }
@@ -70,71 +45,40 @@
         .photo-card {
             background-color: #fff;
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #f0f0f0;
+            border: 2px solid transparent; /* Reserva espaço para o destaque */
+            transition: all 0.5s ease;
         }
 
-        .photo-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(214, 51, 132, 0.15);
+        /* CLASSE DE DESTAQUE (Acionada pelo QR Code) */
+        .highlight {
+            border-color: #d63384;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(214, 51, 132, 0.4);
+            z-index: 10;
         }
 
-        /* Moldura Quadrada (Ratio 1:1) */
         .photo-frame {
             width: 100%;
-            padding-top: 100%; /* Mantém o quadrado perfeito */
+            padding-top: 100%;
             position: relative;
-            background-color: #f9f9f9;
         }
 
         .photo-frame img {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Preenche o quadrado sem achatar a imagem */
-            object-position: center;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
         }
 
-        /* Legenda da Foto */
         figcaption {
             padding: 15px;
-            font-size: 0.95em;
-            color: #666;
-            line-height: 1.5;
-            text-align: center;
-            background-color: #fff;
             font-style: italic;
-            border-top: 1px solid #fef0f5;
+            color: #666;
         }
 
-        /* Coração Animado */
-        .heart-icon {
-            color: #d63384;
-            font-size: 3.5em;
-            animation: pulse 1.5s infinite;
-            margin-top: 40px;
-            display: block;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
-        }
-
-        /* Responsividade para telas menores */
-        @media (max-width: 600px) {
-            .main-container { padding: 25px; }
-            h1 { font-size: 2em; }
-            .photo-gallery { grid-template-columns: 1fr; }
-        }
+        .heart-icon { color: #d63384; font-size: 3.5em; animation: pulse 1.5s infinite; margin-top: 40px; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
     </style>
 </head>
 <body>
@@ -143,90 +87,52 @@
     <h1>Para Você, Meu Amor ❤️</h1>
 
     <div class="letter-content">
-        <p>My dear,</p>
-        <p>Estou escrevendo esta carta para você como uma surpresa especial. Ainda estou organizando as palavras para expressar tudo o que sinto, mas queria que você já visse o começo desta página que criei só para nós.</p>
-        <p>Preparei um espaço para colocarmos as nossas fotos favoritas, para que possamos sempre lembrar dos momentos incríveis que passamos juntos. Cada foto aqui é um pedacinho da nossa história.</p>
-        <p>Em breve, esta carta estará completa, cheia de carinho e de tudo o que você representa para mim. Por enquanto, aproveite as fotos e saiba que eu te amo muito! ❤️</p>
-        <p>Com todo o meu amor,</p>
-        <p><strong>Guilherme</strong></p>
+        <p>Preparei esta surpresa especial...</p>
     </div>
 
     <ul class="photo-gallery">
-        <li class="photo-card">
+        <li class="photo-card" id="foto1">
             <figure>
-                <div class="photo-frame">
-                    <img src="fotos/7147D496-CB40-46F2-8115-964654C05D15.jpg" alt="Foto Nossa 1">
-                </div>
-                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
+                <div class="photo-frame"><img src="fotos/7147D496-CB40-46F2-8115-964654C05D15.jpg"></div>
+                <figcaption>Legenda da foto 1...</figcaption>
             </figure>
         </li>
 
-        <li class="photo-card">
+        <li class="photo-card" id="foto2">
             <figure>
-                <div class="photo-frame">
-                    <img src="fotos/IMG-20210610-WA0174.jpg" alt="Foto Nossa 2">
-                </div>
-                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
+                <div class="photo-frame"><img src="fotos/IMG-20210610-WA0174.jpg"></div>
+                <figcaption>Legenda da foto 2...</figcaption>
             </figure>
         </li>
 
-        <li class="photo-card">
-            <figure>
-                <div class="photo-frame">
-                    <img src="fotos/IMG-20210921-WA0083.jpg" alt="Foto Nossa 3">
-                </div>
-                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
-            </figure>
-        </li>
-
-        <li class="photo-card">
-            <figure>
-                <div class="photo-frame">
-                    <img src="fotos/IMG-20220227-WA0062.jpg" alt="Foto Nossa 4">
-                </div>
-                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
-            </figure>
-        </li>
-
-        <li class="photo-card">
-            <figure>
-                <div class="photo-frame">
-                    <img src="fotos/IMG-20220602-WA0013.jpg" alt="Foto Nossa 5">
-                </div>
-                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
-            </figure>
-        </li>
-
-        <li class="photo-card">
-            <figure>
-                <div class="photo-frame">
-                    <img src="fotos/IMG-20221213-WA0037.jpg" alt="Foto Nossa 6">
-                </div>
-                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
-            </figure>
-        </li>
-
-        <li class="photo-card">
-            <figure>
-                <div class="photo-frame">
-                    <img src="fotos/unnamed (1).jpg" alt="Foto Nossa 7">
-                </div>
-                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
-            </figure>
-        </li>
-
-        <li class="photo-card">
-            <figure>
-                <div class="photo-frame">
-                    <img src="fotos/unnamed.jpg" alt="Foto Nossa 8">
-                </div>
-                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
-            </figure>
-        </li>
-    </ul>
+        </ul>
 
     <i class="fas fa-heart heart-icon"></i>
 </div>
+
+<script>
+    // Função para destacar a foto baseada na URL
+    function handleHighlight() {
+        // Remove destaque anterior
+        document.querySelectorAll('.photo-card').forEach(card => card.classList.remove('highlight'));
+
+        const hash = window.location.hash; // Pega o #foto1 da URL
+        if (hash) {
+            const targetCard = document.querySelector(hash);
+            if (targetCard) {
+                targetCard.classList.add('highlight');
+                // Opcional: remover o destaque após alguns segundos
+                setTimeout(() => {
+                    targetCard.classList.remove('highlight');
+                }, 5000);
+            }
+        }
+    }
+
+    // Executa quando a página carrega ou quando o hash muda
+    window.addEventListener('load', handleHighlight);
+    window.addEventListener('hashchange', handleHighlight);
+</script>
 
 </body>
 </html>
