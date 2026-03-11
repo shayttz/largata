@@ -10,92 +10,131 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background-color: #fff0f3; /* Rosa bem claro e suave */
-            color: #333;
+            background-color: #fff0f3; /* Rosa suave */
+            color: #444;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         /* Container Principal */
         .main-container {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             background-color: #fff;
-            padding: 40px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 35px rgba(214, 51, 132, 0.1);
+            border-radius: 25px;
             text-align: center;
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeIn 1.2s ease-out;
+            box-sizing: border-box;
         }
 
-        /* Animação de Entrada */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         /* Título e Carta */
         h1 {
-            color: #d63384; /* Rosa mais escuro para o título */
-            font-size: 2.8em;
-            margin-bottom: 20px;
+            color: #d63384;
+            font-size: 3em;
+            margin-bottom: 30px;
+            font-family: 'Georgia', serif;
         }
 
         .letter-content {
-            font-size: 1.1em;
-            line-height: 1.7;
+            font-size: 1.15em;
+            line-height: 1.8;
             text-align: left;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             color: #555;
-            padding: 0 20px;
+            padding: 0 10px;
+            border-left: 3px solid #ffc1e3;
+            padding-left: 25px;
         }
 
-        /* Galeria de Fotos */
+        /* Galeria de Fotos em Cards */
         .photo-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+            width: 100%;
             list-style: none;
             padding: 0;
-            margin-bottom: 30px;
         }
 
-        .photo-gallery li {
-            position: relative;
+        .photo-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #f0f0f0;
         }
 
-        .photo-gallery li:hover {
-            transform: scale(1.03); /* Leve efeito de zoom no hover */
+        .photo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(214, 51, 132, 0.15);
         }
 
-        .photo-gallery img {
+        /* Moldura Quadrada (Ratio 1:1) */
+        .photo-frame {
             width: 100%;
-            height: auto;
-            object-fit: cover;
-            display: block;
+            padding-top: 100%; /* Mantém o quadrado perfeito */
+            position: relative;
+            background-color: #f9f9f9;
         }
 
-        /* Coração Animado no Final */
+        .photo-frame img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Preenche o quadrado sem achatar a imagem */
+            object-position: center;
+        }
+
+        /* Legenda da Foto */
+        figcaption {
+            padding: 15px;
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.5;
+            text-align: center;
+            background-color: #fff;
+            font-style: italic;
+            border-top: 1px solid #fef0f5;
+        }
+
+        /* Coração Animado */
         .heart-icon {
             color: #d63384;
-            font-size: 3em;
+            font-size: 3.5em;
             animation: pulse 1.5s infinite;
-            margin-top: 30px;
+            margin-top: 40px;
+            display: block;
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.15); }
             100% { transform: scale(1); }
         }
 
+        /* Responsividade para telas menores */
+        @media (max-width: 600px) {
+            .main-container { padding: 25px; }
+            h1 { font-size: 2em; }
+            .photo-gallery { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -109,19 +148,82 @@
         <p>Preparei um espaço para colocarmos as nossas fotos favoritas, para que possamos sempre lembrar dos momentos incríveis que passamos juntos. Cada foto aqui é um pedacinho da nossa história.</p>
         <p>Em breve, esta carta estará completa, cheia de carinho e de tudo o que você representa para mim. Por enquanto, aproveite as fotos e saiba que eu te amo muito! ❤️</p>
         <p>Com todo o meu amor,</p>
-        <p>Guilherme</p>
+        <p><strong>Guilherme</strong></p>
     </div>
 
     <ul class="photo-gallery">
-        <li><img src="fotos/7147D496-CB40-46F2-8115-964654C05D15.jpg" alt="Foto Nossa 1"></li>
-        <li><img src="fotos/IMG-20210610-WA0174.jpg" alt="Foto Nossa 2"></li>
-        <li><img src="fotos/IMG-20210921-WA0083.jpg" alt="Foto Nossa 3"></li>
-        <li><img src="fotos/IMG-20220227-WA0062.jpg" alt="Foto Nossa 4"></li>
-        <li><img src="fotos/IMG-20220602-WA0013.jpg" alt="Foto Nossa 5"></li>
-        <li><img src="fotos/IMG-20221213-WA0037.jpg" alt="Foto Nossa 6"></li>
-        <li><img src="fotos/unnamed (1).jpg" alt="Foto Nossa 7"></li>
-        <li><img src="fotos/unnamed.jpg" alt="Foto Nossa 8"></li>
-    </div>
+        <li class="photo-card">
+            <figure>
+                <div class="photo-frame">
+                    <img src="fotos/7147D496-CB40-46F2-8115-964654C05D15.jpg" alt="Foto Nossa 1">
+                </div>
+                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
+            </figure>
+        </li>
+
+        <li class="photo-card">
+            <figure>
+                <div class="photo-frame">
+                    <img src="fotos/IMG-20210610-WA0174.jpg" alt="Foto Nossa 2">
+                </div>
+                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
+            </figure>
+        </li>
+
+        <li class="photo-card">
+            <figure>
+                <div class="photo-frame">
+                    <img src="fotos/IMG-20210921-WA0083.jpg" alt="Foto Nossa 3">
+                </div>
+                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
+            </figure>
+        </li>
+
+        <li class="photo-card">
+            <figure>
+                <div class="photo-frame">
+                    <img src="fotos/IMG-20220227-WA0062.jpg" alt="Foto Nossa 4">
+                </div>
+                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
+            </figure>
+        </li>
+
+        <li class="photo-card">
+            <figure>
+                <div class="photo-frame">
+                    <img src="fotos/IMG-20220602-WA0013.jpg" alt="Foto Nossa 5">
+                </div>
+                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
+            </figure>
+        </li>
+
+        <li class="photo-card">
+            <figure>
+                <div class="photo-frame">
+                    <img src="fotos/IMG-20221213-WA0037.jpg" alt="Foto Nossa 6">
+                </div>
+                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
+            </figure>
+        </li>
+
+        <li class="photo-card">
+            <figure>
+                <div class="photo-frame">
+                    <img src="fotos/unnamed (1).jpg" alt="Foto Nossa 7">
+                </div>
+                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
+            </figure>
+        </li>
+
+        <li class="photo-card">
+            <figure>
+                <div class="photo-frame">
+                    <img src="fotos/unnamed.jpg" alt="Foto Nossa 8">
+                </div>
+                <figcaption>Escreva aqui uma legenda especial para esta foto...</figcaption>
+            </figure>
+        </li>
+    </ul>
 
     <i class="fas fa-heart heart-icon"></i>
 </div>
